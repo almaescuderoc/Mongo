@@ -2,7 +2,7 @@ const http= require('http');
 const mongoose = require('mongoose');
 const url = require('url');
 
-const MONGO_URI="mongodb+srv://root:root@cluster0.ms3dz.mongodb.net/MyPelis.pelis?retryWrites=true&w=majority"
+const MONGO_URI="mongodb+srv://root:root@cluster0.ms3dz.mongodb.net/MyPelis?retryWrites=true&w=majority"
 
 mongoose.connect(MONGO_URI, function(err){
     if(err){
@@ -15,8 +15,8 @@ mongoose.connect(MONGO_URI, function(err){
 
 
 const PelisSchema = new mongoose.Schema({
-    name: { type: String},
-    genero: { type: String}
+    name: { type: String },
+    genero: { type: String }
 });
 
 const PelisModel = mongoose.model('pelis', PelisSchema);
@@ -37,7 +37,7 @@ const server = http.createServer(function (request, response){
             response.end();
         });
     }
-    response.write('Hello World Test ');
+    response.write('Hello World 1');
     response.write('Query :' , query.name);
     response.end();
 });
