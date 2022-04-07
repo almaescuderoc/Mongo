@@ -22,8 +22,8 @@ const PelisSchema = new mongoose.Schema({
 const PelisModel = mongoose.model('pelis', PelisSchema);
 
 const server = http.createServer(function (request, response){
-    const urlvar = url.parse(request.url, true);
-    const query = urlvar.query;
+    const $url = url.parse(request.url, true);
+    const query = $url.query;
 
     if(!query.name){
         PelisModel.find(function(err,documents){
@@ -37,7 +37,7 @@ const server = http.createServer(function (request, response){
             response.end();
         });
     }
-    response.write('Hello World 3');
+    response.write('Hello World Test ');
     response.write('Query :' , query.name);
     response.end();
 });
