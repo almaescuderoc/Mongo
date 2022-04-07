@@ -14,6 +14,12 @@ mongoose.connect(MONGO_URI, function(err){
 });
 
 
+const PelisSchema = new mongoose.Schema({
+    name: { type: String},
+    genero: { type: String}
+});
+
+const PelisModel = mongoose.model('pelis', PelisSchema);
 
 const server = http.createServer(function (request, response){
 
