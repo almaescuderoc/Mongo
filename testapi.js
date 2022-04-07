@@ -28,10 +28,11 @@ const server = http.createServer(function (request, response){
     if(!query.name){
         PelisModel.find(function(err,documents){
             response.write(JSON.stringify(documents));
+            console.log("After JSON");
             response.end();
         })
     }
-    response.write('Hello World Server');
+    response.write('Hello World 2');
     response.end();
 });
 
