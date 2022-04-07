@@ -13,30 +13,12 @@ mongoose.connect(MONGO_URI, function(err){
     }
 });
 
-const PelisSchema = new mongoose.Schema({
-    name: { type: String},
-    genero: { type: String}
-});
 
-const PelisModel = mongoose.model('pelis', PelisSchema);
 
 const server = http.createServer(function (request, response){
-const urlvar = url.parse(request.url, true);
-const query = urlvar.query;
 
-    if(!query.name){
-        PelisModel.find(function(err,documents){
-            response.write(JSON.stringify(documents));
-            response.end();
-        })
-    } else {
-        PelisModel.find({name: new RegExp(query.name, "i")}, function(err, documents){
-            response.write(JSON.stringify(documents));
-            response.end();
-        });
-    }
-    //response.write('Hello World');
-    //response.end();
+    response.write('Hello World');
+    response.end();
 });
 
 server.listen(process.env.PORT || 3000, function(){
