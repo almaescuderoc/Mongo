@@ -22,8 +22,16 @@ const PelisSchema = new mongoose.Schema({
 const PelisModel = mongoose.model('pelis', PelisSchema);
 
 const server = http.createServer(function (request, response){
+    const urlvar = url.parse(request.url, true);
+    const query = urlvar.query;
 
-    response.write('Hello World');
+    if(!query.name){
+        PelisModel.find(function(err,documents){
+            response.write(JSON.stringify(documents));
+            response.end();
+        })
+    }
+    response.write('Hello World Server');
     response.end();
 });
 
