@@ -2,7 +2,7 @@ const http= require('http');
 const mongoose = require('mongoose');
 const url = require('url');
 
-const MONGO_URI="mongodb+srv://root:root@cluster0.ms3dz.mongodb.net/MyPelis?retryWrites=true&w=majority"
+const MONGO_URI="mongodb+srv://root:root@cluster0.ms3dz.mongodb.net/MyPelis.pelis?retryWrites=true&w=majority"
 
 mongoose.connect(MONGO_URI, function(err){
     if(err){
