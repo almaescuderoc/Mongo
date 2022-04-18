@@ -19,7 +19,7 @@ const PelisSchema = new mongoose.Schema({
     genero: { type: String }
 });
 
-const PelisModel = mongoose.model('pelis', PelisSchema);
+const PelisModel = mongoose.model("pelis", PelisSchema);
 
 const server = http.createServer(function (request, response){
     const $url = url.parse(request.url, true);
@@ -37,7 +37,7 @@ const server = http.createServer(function (request, response){
             response.end();
         });
     }
-    response.write('Hello World 1');
+    response.write('Hello World X ');
     response.write('Query :' , query.name);
     response.end();
 });
