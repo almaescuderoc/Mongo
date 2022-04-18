@@ -11,7 +11,7 @@ mongoose.connect(MONGO_URI, function(err){
     else{
         console.log('Conectado a la BD');
     }
-});
+})
 
 
 const PelisSchema = new mongoose.Schema({
